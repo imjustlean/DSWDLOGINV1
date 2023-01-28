@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<section class="vh-100">
+    <div class="container py-5 h-100 ps-5 pe-5">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="~/images/DSWD.png"
+                     class="img-fluid" alt="Phone image">
+            </div>
+
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form>
+                    <!-- Email input -->
+
+                    <div class="mb-3">
+                        <h2 style="text-align: center;"><b>LOGIN</b></h2>
+                    </div>
+
+                    <div id="alertLogin" class="alert alert-danger collapse" role="alert">
+                        Oops, username and password does not match. Please try again.
+
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="text" class="form-control mb-2" id="txtUserID" placeholder="Username" />
+                        <label for="txtUserID" style="color: rgb(122, 122, 122);">Username</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="password" class="form-control mb-2" id="txtPass" placeholder="Password"/>
+                        <label for="txtPass" style="color: rgb(122, 122, 122);">Password</label>
+                    </div>
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                        <a href="#!" style="color: red">Forgot password?</a>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-2" style="width:100%;" onclick="">Sign in</button>
+                    <button type="button" class="btn btn-sm btn-success btn-lg btn-block" style="width:100%;" onclick="register()">Register</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="modal fade" id="modalLoginFailed" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLoginFailedlabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLoginFailedlabel">Login Failed</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <h4>Oops, username and password does not match!</h4>
+
+                <p>Please try again or you may contact IT Administrator for support</p>
+
+
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-success" onclick="UpdateAssets()" id="btnUpdateAsset" value="" data-name="">Update</button>*@
+                <button id="btnRetry" type="button" class="btn btn-danger" data-bs-dismiss="modal">Retry</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function register() {
+        window.location.href = '/Home/Register';
+    }
+</script>
